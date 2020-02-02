@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<title>KU-BIG 신종 코로나바이러스 데이터분석팀</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/w3style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+<body class="w3-black">
+
+
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center" style="z-index:3;width:200px;font-weight:bold"> 
+  <img class="w3-padding-48" src="/corocoro/images/coro.jpg" style="width:100%">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-text-white w3-hover-black">확진자 이동경로</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-text-white w3-hover-black">데이터분석</a> 
+  <a href="#photos" onclick="w3_close()" class="w3-bar-item w3-button w3-text-white w3-hover-black">ABOUT</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-text-white w3-hover-black">CONTACT</a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-xlarge"><span class="w3-hide-small"></span> nCov 확진자 이동경로<p>
+      <div class="outdiv">
+        <div class="indiv" id="map" style="width:1500px;height:800px;"></div>
+      </div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a1fb7efe94e828e84dab4f1bdc5d7e89"></script>
+        <script>
+          var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+          mapOption = { 
+              center: new kakao.maps.LatLng(37.590927, 127.027745), // 지도의 중심좌표
+              level: 3 // 지도의 확대 레벨
+          };
+
+          var map = new kakao.maps.Map(mapContainer, mapOption);
+
+          var positions = [
+              {
+                  content: '<div class="w3-text-grey w3-center">고려대학교</div>', 
+                  latlng: new kakao.maps.LatLng(37.590927, 127.027745)
+              },
+          ];
+
+          var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+              
+          for (var i = 0; i < positions.length; i ++) {
+              
+              // 마커 이미지의 이미지 크기 입니다
+              var imageSize = new kakao.maps.Size(24, 35); 
+              
+              // 마커 이미지를 생성합니다    
+              var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+              
+              // 마커를 생성합니다
+              var marker = new kakao.maps.Marker({
+                  map: map, // 마커를 표시할 지도
+                  position: positions[i].latlng, // 마커를 표시할 위치
+                  title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                  image : markerImage // 마커 이미지 
+              });
+
+              var infowindow = new kakao.maps.InfoWindow({
+                  content: positions[i].content // 인포윈도우에 표시할 내용
+              });
+
+              kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+              kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+          }
+
+          // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+          function makeOverListener(map, marker, infowindow) {
+              return function() {
+                  infowindow.open(map, marker);
+              };
+          }
+
+          // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+          function makeOutListener(infowindow) {
+              return function() {
+                  infowindow.close();
+              };
+          }
+
+        </script>
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">My Name</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+    <p class="w3-wide">Photography</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+    </div>
+    <p class="w3-wide">Web Design</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+    </div>
+    <p class="w3-wide">Photoshop</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+    </div><br>
+    
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">11+</span><br>
+        Partners
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">55+</span><br>
+        Projects Done
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">89+</span><br>
+        Happy Clients
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">150+</span><br>
+        Meetings
+      </div>
+    </div>
+
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+    
+    <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">5GB Storage</li>
+          <li class="w3-padding-16">Mail Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>    
+  <!-- End About Section -->
+  </div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h1 class="w3-padding-24 w3-text-light-grey w3-center">KU-BIG을 소개합니다.</h1>  
+    <img src="/corona/images/banner.jpg" alt="Avatar" style=width:100% class="w3-center">
+    <h6 class="w3-center w3-text-white">고려대학교 빅데이터 연구회(이하 KU-BIG)는 데이터분석, 머신러닝, 딥러닝에 관심이 있는 고려대학교 학생들이 모여 만든 학회입니다. 매 학기마다 신입 회원들을 대상으로 교육 세션을 진행하고 중간고사 이후 부터는 프로젝트를 진행합니다. 2019년도 2학기에는 Algorithm Trading, Atari Breakout, Chatbot, Chicago Crime Data From Kaggle, TimeSeriesForecasting, Style Trnasfer,Marketing Strategy From Finedust Data 등과 같은 프로젝트를 진행하였습니다. 같이 배우고자 하는 열망으로 모인 KU-BIG 학회원들은 매학기의 시작을 두근대는 심장과 함께 합니다.</h6><br>
+  
+    <h2 class="w3-text-light-grey">Members</h2>
+    <h6 class="w3-text-light-grey">KU-BIG 신종 코로나바이러스 데이터분석팀은 다양한 전공의 고려대학교 학부생들로 구성돼 국내 코로나 바이러스 현황과 그 영향을 알기 쉽게 전달합니다.</h6>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">김근호(10기, 산업경영공학부)</h4>
+      </div>
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">정재원(회장, 통계학과)</h4>
+      </div>
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">이나영(10기, 보건정책관리학부)</h3>
+      </div>
+    </div>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">김정현(10기, 미디어학과)</h4>
+      </div>
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">권지혜(10기, 컴퓨터학과)</h4>
+      </div>
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">이은진(10기, 교육학과)</h4>
+      </div>
+    </div>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">이영신(10기, 통계학과)</h4>
+      </div>
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">허찬(10기, 통계학과)</h4>
+      </div>
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">전혜민(10기, 지리교육과)</h4>
+      </div>
+    </div>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">조규선(10기, 통계학과)</h4>
+      </div>
+      <div class="w3-third">
+      </div>
+      <div class="w3-third">
+        <img src="/corona/images/sample.jpg" style="width:100%">
+        <h4 class="w3-center">최성웅(10기, 통계학과)</h4>
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Chicago, US</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    </div><br>
+    <p>Lets get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
