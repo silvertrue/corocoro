@@ -8,16 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-
-    .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+.wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
     .wrap * {padding: 0;margin: 0;}
     .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
     .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
@@ -31,7 +22,14 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
     .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
     .info .link {color: #5085BB;}
-
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
 </style>
 <body class="w3-black">
 
@@ -115,24 +113,16 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
                   image : markerImage // 마커 이미지 
               });
 
-              var overlay = new kakao.maps.CustomOverlay({
-                                  content: content,
-                                  map: map,
-                                  position: marker.getPosition()       
-                              });
+              var infowindow = new kakao.maps.InfoWindow({
+                  content: positions[i].content // 인포윈도우에 표시할 내용
+              });
 
-                kakao.maps.event.addListener(marker, 'click', function() {
-                    overlay.setMap(map);
-                });
-                // kakao.maps.event.addListener(marker, "click", makeOverListener(map, marker, infowindow));
-                // kakao.maps.event.addListener(marker, 'click', makeOutListener(infowindow));
+              kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+              kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
           }
-          function closeOverlay() {
-              overlay.setMap(null);
-          } 
 
           // 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
-          /*function makeOverListener(map, marker, infowindow) {
+          function makeOverListener(map, marker, infowindow) {
               return function() {
                   infowindow.open(map, marker);
               };
@@ -143,7 +133,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
               return function() {
                   infowindow.close();
               };
-          }*/
+          }
 
         </script>
   </header>
