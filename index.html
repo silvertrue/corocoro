@@ -83,14 +83,32 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
             '        </div>' + 
             '        <div class="body">' + 
             '            <div class="desc">' + 
-            '                <div class="ellipsis">1번환자</div>' + 
+            '                <div class="ellipsis">1번 환자</div>' + 
             '                <div class="jibun ellipsis">날짜: 200119</div>' + 
-            '                <div class="jibun ellipsis">비고: 적을사항 있으면 입력, 없으면 비우기</div>' + 
+            '                <div class="jibun ellipsis">비고: 적을사항 있으면 입력, 없으면 비워두기</div>' + 
             '            </div>' + 
             '        </div>' + 
             '    </div>' +    
             '</div>', 
                   latlng: new kakao.maps.LatLng(37.4725028, 126.4313798)
+              },
+              {
+                  content: '<div class="w3-text-grey wrap">' + 
+            '    <div class="info">' + 
+            '        <div class="title">' + 
+            '            인천광역시의료원' + 
+            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
+            '        </div>' + 
+            '        <div class="body">' + 
+            '            <div class="desc">' + 
+            '                <div class="ellipsis">1번 환자</div>' + 
+            '                <div class="jibun ellipsis">날짜: 200119</div>' + 
+            '                <div class="jibun ellipsis">공항 검역대에서 바로 격리 조치</div>' + 
+            '            </div>' + 
+            '        </div>' + 
+            '    </div>' +    
+            '</div>', 
+                  latlng: new kakao.maps.LatLng(37.4785259, 126.6663152)
               }
           ];
 
