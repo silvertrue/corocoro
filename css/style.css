@@ -2,177 +2,6 @@ body {
     margin: 0px;
   }
   
-/*  .info_content {
-    border-radius: 5px;
-    background: white;
-    padding: 3px;
-    font-size: 13px;
-    margin-top: 18.7px;
-    margin-left: 6px;
-    border: 1px solid #111;
-    font-weight: bold;
-    position: absolute;
-    left: 2000px;
-    z-index: 1100;
-    top: 2000px;
-    white-space: nowrap;
-  }
-  
-  .im {
-    z-index: 100;
-  }
-  
-  .wrap {
-    position: absolute;
-    left: 0;
-    bottom: 0px;
-    width: 180px;
-    height: 57px;
-    margin-left: 0px;
-    text-align: left;
-    font-size: 12px;
-    font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
-    line-height: 1.5;
-  }
-  
-  .wrap * {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .wrap .info {
-    width: 178px;
-    margin-top: 74;
-    height: 80px;
-    border-radius: 5px;
-    border-bottom: 2px solid #eee;
-    border-right: 1px solid #eee;
-    background: #fff;
-  }
-  
-  .wrap .info:nth-child(1) {
-    border: 0;
-    box-shadow: 0px 1px 2px #888;
-  }
-  
-  .info .title {
-    padding: 5px 10px 0 10px;
-    height: 30px;
-    border-bottom: 1px solid #eee;
-    font-size: 15px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .info .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #888;
-    width: 17px;
-    height: 17px;
-    background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
-  }
-  
-  .info .close:hover {
-    cursor: pointer;
-  }
-  
-  .info .body {
-    padding: 5px;
-    height: 30px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .info .foot {
-    text-align: center;
-    height: 30px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .info .desc {
-    position: relative;
-    margin: 8px 0 0 90px;
-    height: 75px;
-    display: block;
-  }
-  
-  .desc .ellipsis {
-    display: block;
-    white-space: normal;
-  }
-  
-  .desc .jibun {
-    font-size: 11px;
-    color: #888;
-    margin-top: -2px;
-    width: 100px;
-  }
-  
-  .info .img {
-    position: absolute;
-    text-align: center;
-    top: 6px;
-    left: 5px;
-    width: 73px;
-    height: 71px;
-    border: 1px solid #ddd;
-    color: #888;
-    overflow: hidden;
-  }
-  
-  .info .link {
-    color: #5085BB;
-  }*/
-  
-  .load {
-    background-color: rgb(110, 191, 233);
-    /* Green */
-    border: none;
-    color: white !important;
-    height: 100%;
-    width: 95%;
-    border-radius: 4px;
-    opacity: 0.9;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  .load:hover {
-    opacity: 1.0;
-  }
-  
-  .wrap::after {
-    content: '';
-    position: absolute;
-    bottom: -34px !important;
-    margin-left: -12px;
-    left: 50%;
-    bottom: 0;
-    width: 22px;
-    height: 12px;
-    background: url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
-  }
-  
-  .phone {
-    color: #8383af;
-  }
-  
-  .air {
-    color: rgb(110, 191, 233);
-    font-weight: bold;
-  }
-  
-  .title {
-    font-family: BMHANNAAir;
-  }
-  
   .logo{
     width: 70px;
     height: 70px;
@@ -182,7 +11,7 @@ body {
     position: absolute;
     right:0px;
   }
-  .wa {
+  .cate {
     left: 30px;
     top: 110px;
     display: block;
@@ -191,76 +20,6 @@ body {
     position: absolute;
     background-color: #fff;
     background-clip: padding-box;
-  }
-  
-  .content {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 26px;
-  }
-  
-  .wa1 {
-    left: 13px;
-    top: 200px;
-    width: 70px;
-    display: block;
-    text-align: center;
-    padding: 10px 10px 10px 10px;
-    z-index: 1000;
-    position: fixed;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1);
-    border: 1px solid rgba(0, 0, 0, .2);
-    background-clip: padding-box;
-  }
-  
-  
-  .hi {
-    z-index: 1000;
-    width: 35px;
-    position: static;
-    height: 35px;
-    display: inline-block;
-    overflow: hidden;
-    background-image: url(https://ssl.pstatic.net/static/maps/v5/pc/20190430114353/home.png);
-    background-size: 501px 498px;
-    background-position: -257px -377px;
-  }
-  
-  .hi.active {
-    z-index: 1000;
-    width: 35px;
-    height: 35px;
-    display: inline-block;
-    overflow: hidden;
-    background-image: url(https://ssl.pstatic.net/static/maps/v5/pc/20190430114353/home.png);
-    background-size: 501px 498px;
-    background-position: -220px -377px;
-  }
-  
-  #cu_alert {
-    display: inline-block;
-    position: fixed;
-    color: white;
-    background: red;
-    z-index: 1200;
-    height: 200px;
-  }
-  
-  .qwe1 {
-    display: block !important;
-    position: absolute;
-    right: 15px;
-    z-index: 1;
-    font-size: 13px;
-    width: 100%;
-    font-weight: bolder;
-    text-align: end;
-    padding: 10px 0 0 0;
   }
 
   .kubig {
@@ -273,40 +32,8 @@ body {
     right: 9px;
   }
   
-  .arrow_box {
-    cursor: none;
-    display: none;
-    line-height: 29px;
-    font-size: 13px;
-    z-index: 1000;
-    left: 65px;
-    height: 200px;
-    padding: 0 6px 0 6px;
-    position: absolute;
-    color: white;
-    top: 9.3%;
-    height: 30px;
-    border-radius: 5px;
-    opacity: 0.7;
-    background: black;
-  }
   
-  .arrow_box:after {
-    right: 100%;
-    top: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 10;
-    position: absolute;
-    pointer-events: none;
-    border-color: #00ff0000;
-    border-right-color: black;
-    border-width: 6px;
-    margin-top: -6px;
-  }
-  
-  .to {
+  .nav {
     background: black;
     height: 5%;
     color: white;
@@ -315,38 +42,17 @@ body {
     padding: 0 80px;
     align-items: center;
   }
-  
-  .toto {
-    font-size: 23px;
-    font-family: BMHANNAAir;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
+
+  .w3-theme-d1 {
+    color:#000 !important; 
+    background-color:#cccccc !important;
   }
-  
-  .in {
-    width: 35px;
-    display: block;
-    z-index: 1000;
-    position: absolute;
-    height: 35px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1);
-    border: 1px solid rgba(0, 0, 0, .2);
-    background-clip: padding-box;
-    top: 15% !important;
-    left: 13px;
-  }
+ 
 
   
   @media (max-width: 767px) {
   
-    .d1 {
-      display: none;
-    }
-  
-    .wa {
+    .cate {
       left: 15px;
       top: 100px;
       display: block;
@@ -357,47 +63,11 @@ body {
       background-clip: padding-box;
     }
   
-    .wa1 {
-      left: 13px;
-      top: 180px;
-      width: 70px;
-      display: block;
-      text-align: center;
-      padding: 10px 10px 10px 10px;
-      z-index: 1000;
-      position: fixed;
-      background-color: #fff;
-      border-radius: 4px;
-      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1);
-      border: 1px solid rgba(0, 0, 0, .2);
-      background-clip: padding-box;
-    }
-  
-    .arrow_box {
-      display: none important;
-    }
-  
-    .to {
+    .nav {
       padding: 0 !important;
       display: flex;
     }
-  
-    .qwe {
-      display: none;
-    }
-  
-    .qwe1 {
-      display: block !important;
-      position: absolute;
-      right: 15px;
-      z-index: 1;
-      font-size: 13px;
-      width: 100%;
-      font-weight: bolder;
-      text-align: end;
-      padding: 10px 0 0 0;
-    }
-  
+
     .kubig {
       display: block !important;
       position: absolute;
