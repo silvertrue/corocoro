@@ -1676,11 +1676,10 @@
           var map = new kakao.maps.Map(mapContainer, mapOption);
           //지도생성
 
-           // 마커 클러스터러를 생성합니다 
           var clusterer = new kakao.maps.MarkerClusterer({
-              map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
-              averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
-              minLevel: 10, // 클러스터 할 최소 지도 레벨 
+              map: map, 
+              averageCenter: true, 
+              minLevel: 10, 
               calculator: [5,10,20],
               styles:[{
                 width : '30px', height : '30px',
@@ -1751,15 +1750,15 @@
 
 
 
-        var threeMarkers = [], // 커피숍 마커 객체를 가지고 있을 배열입니다
-        sevenMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
+        var threeMarkers = [], 
+        sevenMarkers = [], 
         allMarkers =[],
         threeOverlays = [],
         sevenOverlays = [],
         allOverlays =[];
 
-        createThreeMarkers(); // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가합니다
-        createSevenMarkers(); // 편의점 마커를 생성하고 편의점 마커 배열에 추가합니다
+        createThreeMarkers(); 
+        createSevenMarkers(); 
         createAllMarkers();
 
         function createMarkerImage(src, size, options) {
