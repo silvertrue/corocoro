@@ -19,7 +19,7 @@
 #### 2. 마크 추가(index.html)
 
 <img src="https://user-images.githubusercontent.com/45965766/73856155-60786600-4878-11ea-90c2-2ef8363d755f.jpg">
-<img src="https://user-images.githubusercontent.com/45965766/73953988-88350000-4944-11ea-90e1-bedcf433d407.jpg" height="70%" width="70%">
+<img src="https://user-images.githubusercontent.com/45965766/73954255-e6fa7980-4944-11ea-8ad9-ab872327563c.jpg" height="70%" width="70%">
 
 
 #### 3. 시간 업데이트(index.html)
