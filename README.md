@@ -19,9 +19,7 @@
 #### 2. 마크 추가(index.html)
 
 <img src="https://user-images.githubusercontent.com/45965766/73856155-60786600-4878-11ea-90c2-2ef8363d755f.jpg">
-<img src="https://user-images.githubusercontent.com/45965766/73953732-31c7c180-4944-11ea-87d2-37572a039a0a.jpg" height="70%" width="70%">
-
-![그림1](https://user-images.githubusercontent.com/45965766/73952638-8e29e180-4942-11ea-92b4-44af12a3d4e2.jpg)
+<img src="https://user-images.githubusercontent.com/45965766/73953988-88350000-4944-11ea-90e1-bedcf433d407.jpg" height="70%" width="70%">
 
 
 #### 3. 시간 업데이트(index.html)
