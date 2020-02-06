@@ -73,7 +73,7 @@
     <div class='w3-white'>
       <button id="threeDays" onclick="changeMarker('three')" class="w3-button w3-block w3-left-align" style="text-align: center; border: .2px solid rgba(0, 0, 0, .3);">최근3일</button>
       <button id="sevenDays" onclick="changeMarker('seven')" class="w3-button w3-block w3-left-align" style="text-align: center; border: .2px solid rgba(0, 0, 0, .3);">최근7일</button>
-      <button id="carparkMenu" onclick="changeMarker('carpark')" class="w3-button w3-block w3-left-align" style="text-align: center; border: .2px solid rgba(0, 0, 0, .3);">전체보기</button>
+      <button id="allDays" onclick="changeMarker('all')" class="w3-button w3-block w3-left-align" style="text-align: center; border: .2px solid rgba(0, 0, 0, .3);">전체보기</button>
     </div>      
   </div>
 </div>
@@ -1669,7 +1669,7 @@
 
           var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
           mapOption = { 
-              center: new kakao.maps.LatLng(37.0944877,127.3338651), // 지도의 중심좌표
+              center: new kakao.maps.LatLng(37.0304678,127.3391997), // 지도의 중심좌표
               level:13  // 지도의 확대 레벨
           };
 
@@ -1753,14 +1753,14 @@
 
         var threeMarkers = [], // 커피숍 마커 객체를 가지고 있을 배열입니다
         sevenMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
-        carparkMarkers =[],
+        allMarkers =[],
         threeOverlays = [],
         sevenOverlays = [],
-        carparkOverlays =[];
+        allOverlays =[];
 
         createThreeMarkers(); // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가합니다
         createSevenMarkers(); // 편의점 마커를 생성하고 편의점 마커 배열에 추가합니다
-        createCarparkMarkers();
+        createAllMarkers();
 
         function createMarkerImage(src, size, options) {
             var markerImage = new kakao.maps.MarkerImage(src, size, options);
@@ -1875,7 +1875,7 @@
             }        
         }
 
-        function createCarparkMarkers() {   
+        function createAllMarkers() {   
             for (var i = 0; i < positions.length; i++) {
                 var imageSize = new kakao.maps.Size(35, 35),
                     imageOptions = {  
@@ -1905,38 +1905,38 @@
                               });
 
                   kakao.maps.event.addListener(marker, 'click', makeClickListener(map, overlay)); 
-                  carparkMarkers.push(marker);
-                  carparkOverlays.push(overlay);
+                  allMarkers.push(marker);
+                  allOverlays.push(overlay);
             }
         }  
 
-        function setCarparkMarkers(map) {        
-            for (var i = 0; i < carparkMarkers.length; i++) {  
-                carparkMarkers[i].setMap(map);
+        function setAllMarkers(map) {        
+            for (var i = 0; i < allMarkers.length; i++) {  
+                allMarkers[i].setMap(map);
             }        
         }
 
-        function setCarparkOverlays(map) {        
-            for (var i = 0; i < carparkOverlays.length; i++) {  
-                carparkOverlays[i].setMap(map);
+        function setAllOverlays(map) {        
+            for (var i = 0; i < allOverlays.length; i++) {  
+                allOverlays[i].setMap(map);
             }        
         }
 
-        changeMarker('carpark');
+        changeMarker('all');
 
         function changeMarker(type){
           var threeDays = document.getElementById('threeDays');
             var sevenDays = document.getElementById('sevenDays');
-            var carparkMenu = document.getElementById('carparkMenu');
+            var allDays = document.getElementById('allDays');
 
 
             if (type === 'three') {
               threeDays.className += ' w3-theme-d1';            
                 sevenDays.className=sevenDays.className.replace(' w3-theme-d1','');
-                carparkMenu.className=carparkMenu.className.replace(' w3-theme-d1','');
+                allDays.className=allDays.className.replace(' w3-theme-d1','');
 
                 clusterer.removeMarkers(sevenMarkers);
-                clusterer.removeMarkers(carparkMarkers);
+                clusterer.removeMarkers(allMarkers);
                 clusterer.addMarkers(threeMarkers);
                             
         
@@ -1944,40 +1944,40 @@
                 setThreeOverlays(null);
                 setThreeMarkers(null);
                 setSevenMarkers(null);
-                setCarparkMarkers(null);
-                setCarparkOverlays(null);
+                setAllMarkers(null);
+                setAllOverlays(null);
                 
             } else if (type === 'seven') {
                 threeDays.className=threeDays.className.replace(' w3-theme-d1','');
-                carparkMenu.className=carparkMenu.className.replace(' w3-theme-d1','');
+                allDays.className=allDays.className.replace(' w3-theme-d1','');
                 sevenDays.className += ' w3-theme-d1';
 
                 clusterer.removeMarkers(threeMarkers);
-                clusterer.removeMarkers(carparkMarkers);
+                clusterer.removeMarkers(allMarkers);
                 clusterer.addMarkers(sevenMarkers);
      
                 setThreeOverlays(null);
                 setSevenOverlays(null);
                 setThreeMarkers(null);
                 setSevenMarkers(null);
-                setCarparkMarkers(null);
-                setCarparkOverlays(null);
+                setAllMarkers(null);
+                setAllOverlays(null);
 
-          } else if (type === 'carpark') { 
+          } else if (type === 'all') { 
                 threeDays.className=threeDays.className.replace(' w3-theme-d1','');
                 sevenDays.className=sevenDays.className.replace(' w3-theme-d1','');
-                carparkMenu.className += ' w3-theme-d1';
+                allDays.className += ' w3-theme-d1';
 
                 clusterer.removeMarkers(threeMarkers);
                 clusterer.removeMarkers(sevenMarkers);
-                clusterer.addMarkers(carparkMarkers);
+                clusterer.addMarkers(allMarkers);
 
                 setThreeOverlays(null);
                 setSevenOverlays(null);
                 setThreeMarkers(null);
                 setSevenMarkers(null);
-                setCarparkMarkers(null);
-                setCarparkOverlays(null);
+                setAllMarkers(null);
+                setAllOverlays(null);
             }
                  
         } 
