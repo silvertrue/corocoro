@@ -14,7 +14,7 @@
 
 #### 1. 확진자/완치자/유증상자 수 업데이트 (analysis.html)
 
-![그림1](https://user-images.githubusercontent.com/45965766/73855983-2a3ae680-4878-11ea-9af4-dd7ee87fd579.png){: height="400"}
+![그림1](https://user-images.githubusercontent.com/45965766/73855983-2a3ae680-4878-11ea-9af4-dd7ee87fd579.png){: width="100" height="100"}
 
 
 #### 2. 마크 추가(index.html)
