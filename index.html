@@ -1320,34 +1320,43 @@
           var clusterer = new kakao.maps.MarkerClusterer({
               map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
               averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
-              minLevel: 9, // 클러스터 할 최소 지도 레벨 
-              calculator: [5,10],
+              minLevel: 10, // 클러스터 할 최소 지도 레벨 
+              calculator: [5,10,20],
               styles:[{
-                width : '60px', height : '60px',
+                width : '30px', height : '30px',
                 background: 'rgba(255,255,153, .8)',
-                borderRadius: '30px',
+                borderRadius: '15px',
                 color: '#000',
                 textAlign: 'center',
                 fontWeight: 'bold',
-                lineHeight: '61px'
+                lineHeight: '31px'
             },
             {
-                width : '80px', height : '80px',
+                width : '50px', height : '50px',
+                background: 'rgba(255,255,153, .8)',
+                borderRadius: '25px',
+                color: '#000',
+                textAlign: 'center',
+                fontWeight: 'bold',
+                lineHeight: '51px'
+            },
+            {
+                width : '70px', height : '70px',
                 background: 'rgba(255,140,0, .8)',
-                borderRadius: '40px',
+                borderRadius: '35px',
                 color: '#000',
                 textAlign: 'center',
                 fontWeight: 'bold',
-                lineHeight: '81px'
+                lineHeight: '71px'
             },
             {
-                width : '100px', height : '100px',
+                width : '90px', height : '90px',
                 background: 'rgba(255, 80, 80, .8)',
-                borderRadius: '50px',
+                borderRadius: '45px',
                 color: '#000',
                 textAlign: 'center',
                 fontWeight: 'bold',
-                lineHeight: '101px'
+                lineHeight: '91px'
             }]
           });
 
