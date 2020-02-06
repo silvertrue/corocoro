@@ -72,7 +72,7 @@
   <div class="w3-card w3-round">
     <div class='w3-white'>
       <button id="threeDays" onclick="changeMarker('three')" class="w3-button w3-block w3-left-align" style="text-align: center; border: .2px solid rgba(0, 0, 0, .3);">최근3일</button>
-      <button id="sevenDays" onclick="changeMarker('store')" class="w3-button w3-block w3-left-align" style="text-align: center; border: .2px solid rgba(0, 0, 0, .3);">최근7일</button>
+      <button id="sevenDays" onclick="changeMarker('seven')" class="w3-button w3-block w3-left-align" style="text-align: center; border: .2px solid rgba(0, 0, 0, .3);">최근7일</button>
       <button id="carparkMenu" onclick="changeMarker('carpark')" class="w3-button w3-block w3-left-align" style="text-align: center; border: .2px solid rgba(0, 0, 0, .3);">전체보기</button>
     </div>      
   </div>
@@ -1752,14 +1752,14 @@
 
 
         var threeMarkers = [], // 커피숍 마커 객체를 가지고 있을 배열입니다
-        storeMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
+        sevenMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
         carparkMarkers =[],
         threeOverlays = [],
-        storeOverlays = [],
+        sevenOverlays = [],
         carparkOverlays =[];
 
         createThreeMarkers(); // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가합니다
-        createStoreMarkers(); // 편의점 마커를 생성하고 편의점 마커 배열에 추가합니다
+        createSevenMarkers(); // 편의점 마커를 생성하고 편의점 마커 배열에 추가합니다
         createCarparkMarkers();
 
         function createMarkerImage(src, size, options) {
@@ -1825,7 +1825,7 @@
             }        
         }
 
-        function createStoreMarkers() {   
+        function createSevenMarkers() {   
             for (var i = 0; i < positions.length; i++) {
               if(parseInt(positions[i].date)>=svdago){
                 
@@ -1857,21 +1857,21 @@
                               });
 
                   kakao.maps.event.addListener(marker, 'click', makeClickListener(map, overlay)); 
-                  storeMarkers.push(marker);
-                  storeOverlays.push(overlay);
+                  sevenMarkers.push(marker);
+                  sevenOverlays.push(overlay);
                 }
             }
         }  
 
-        function setStoreMarkers(map) {        
-            for (var i = 0; i < storeMarkers.length; i++) {  
-                storeMarkers[i].setMap(map);
+        function setSevenMarkers(map) {        
+            for (var i = 0; i < sevenMarkers.length; i++) {  
+                sevenMarkers[i].setMap(map);
             }        
         }
 
-        function setStoreOverlays(map) {        
-            for (var i = 0; i < storeOverlays.length; i++) {  
-                storeOverlays[i].setMap(map);
+        function setSevenOverlays(map) {        
+            for (var i = 0; i < sevenOverlays.length; i++) {  
+                sevenOverlays[i].setMap(map);
             }        
         }
 
@@ -1935,31 +1935,31 @@
                 sevenDays.className=sevenDays.className.replace(' w3-theme-d1','');
                 carparkMenu.className=carparkMenu.className.replace(' w3-theme-d1','');
 
-                clusterer.removeMarkers(storeMarkers);
+                clusterer.removeMarkers(sevenMarkers);
                 clusterer.removeMarkers(carparkMarkers);
                 clusterer.addMarkers(threeMarkers);
                             
         
-                setStoreOverlays(null);
+                setSevenOverlays(null);
                 setThreeOverlays(null);
                 setThreeMarkers(null);
-                setStoreMarkers(null);
+                setSevenMarkers(null);
                 setCarparkMarkers(null);
                 setCarparkOverlays(null);
                 
-            } else if (type === 'store') {
+            } else if (type === 'seven') {
                 threeDays.className=threeDays.className.replace(' w3-theme-d1','');
                 carparkMenu.className=carparkMenu.className.replace(' w3-theme-d1','');
                 sevenDays.className += ' w3-theme-d1';
 
                 clusterer.removeMarkers(threeMarkers);
                 clusterer.removeMarkers(carparkMarkers);
-                clusterer.addMarkers(storeMarkers);
+                clusterer.addMarkers(sevenMarkers);
      
                 setThreeOverlays(null);
-                setStoreOverlays(null);
+                setSevenOverlays(null);
                 setThreeMarkers(null);
-                setStoreMarkers(null);
+                setSevenMarkers(null);
                 setCarparkMarkers(null);
                 setCarparkOverlays(null);
 
@@ -1969,13 +1969,13 @@
                 carparkMenu.className += ' w3-theme-d1';
 
                 clusterer.removeMarkers(threeMarkers);
-                clusterer.removeMarkers(storeMarkers);
+                clusterer.removeMarkers(sevenMarkers);
                 clusterer.addMarkers(carparkMarkers);
 
                 setThreeOverlays(null);
-                setStoreOverlays(null);
+                setSevenOverlays(null);
                 setThreeMarkers(null);
-                setStoreMarkers(null);
+                setSevenMarkers(null);
                 setCarparkMarkers(null);
                 setCarparkOverlays(null);
             }
@@ -1989,7 +1989,7 @@
             }
             else{
                 setThreeOverlays(null);
-                setStoreOverlays(null);
+                setSevenOverlays(null);
                 overlay.setMap(map);
             }
             
