@@ -15,13 +15,11 @@
 #### 1. 확진자/완치자/유증상자 수 업데이트 (analysis.html)
 <img src="https://user-images.githubusercontent.com/45965766/73855983-2a3ae680-4878-11ea-9af4-dd7ee87fd579.png" height="70%" width="70%">
 
-![그림1](https://user-images.githubusercontent.com/45965766/73855983-2a3ae680-4878-11ea-9af4-dd7ee87fd579.png){: width="100" height="100"}
-
 
 #### 2. 마크 추가(index.html)
 
-![슬라이드1](https://user-images.githubusercontent.com/45965766/73856155-60786600-4878-11ea-90c2-2ef8363d755f.jpg)
-![슬라이드2](https://user-images.githubusercontent.com/45965766/73856167-62dac000-4878-11ea-9402-faf39042255d.JPG)
+<img src="https://user-images.githubusercontent.com/45965766/73856155-60786600-4878-11ea-90c2-2ef8363d755f.jpg" height="70%" width="70%">
+<img src="https://user-images.githubusercontent.com/45965766/73856167-62dac000-4878-11ea-9402-faf39042255d.JPG" height="70%" width="70%">
 #####   (병원아이콘)
 ![그림1](https://user-images.githubusercontent.com/45965766/73952638-8e29e180-4942-11ea-92b4-44af12a3d4e2.jpg)
 
