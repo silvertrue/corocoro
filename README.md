@@ -19,7 +19,6 @@
 #### 2. 마크 추가(index.html)
 - 장소 중복 : 하나로 유지하되 날짜=최신방문날짜로, 겹치는 환자 있을 시 환자번호 추가
 
-<img src="https://user-images.githubusercontent.com/45965766/73856155-60786600-4878-11ea-90c2-2ef8363d755f.jpg">
 <img src="https://user-images.githubusercontent.com/45965766/73954255-e6fa7980-4944-11ea-8ad9-ab872327563c.jpg" height="70%" width="70%">
 
 
