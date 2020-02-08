@@ -62,11 +62,6 @@ body {
       background-color: #fff;
       background-clip: padding-box;
     }
-  
-    .nav {
-      padding: 0 !important;
-      display: flex;
-    }
 
     .kubig {
       display: block !important;
