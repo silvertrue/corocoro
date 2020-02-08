@@ -51,6 +51,9 @@ body {
 
   
   @media (max-width: 767px) {
+    .nav{
+      font-size: 10px;
+    }
   
     .cate {
       left: 15px;
