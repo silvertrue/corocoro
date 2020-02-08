@@ -39,7 +39,6 @@ body {
     color: white;
     display: flex;
     justify-content: flex-end;
-    padding: 0 80px;
     align-items: center;
   }
 
@@ -50,11 +49,7 @@ body {
  
 
   
-  @media (max-width: 767px) {
-    .nav{
-      font-size: 10px;
-    }
-  
+  @media (max-width: 767px) {  
     .cate {
       left: 15px;
       top: 100px;
