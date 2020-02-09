@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Awesome-pyecharts</title>
-            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
-
-</head>
-<body>
-    <div id="e3efaf8e004641d9af9ec80200c9bd19" class="chart-container" style="width:900px; height:500px;"></div>
-    <script>
-        var chart_e3efaf8e004641d9af9ec80200c9bd19 = echarts.init(
+var chart_e3efaf8e004641d9af9ec80200c9bd19 = echarts.init(
             document.getElementById('e3efaf8e004641d9af9ec80200c9bd19'), 'white', {renderer: 'canvas'});
         var option_e3efaf8e004641d9af9ec80200c9bd19 = {
     "animation": true,
@@ -473,6 +462,3 @@
     ]
 };
         chart_e3efaf8e004641d9af9ec80200c9bd19.setOption(option_e3efaf8e004641d9af9ec80200c9bd19);
-    </script>
-</body>
-</html>
