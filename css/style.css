@@ -25,7 +25,7 @@ body {
   .kubig {
     position: absolute;
     font-size: 12px;
-    text-align: start;
+    text-align: right;
     font-weight: bolder;
     z-index: 100;
     bottom: 20px;
