@@ -1,6 +1,6 @@
-var chart_b7106ea5cadf467d98ae8e617d6e20e9 = echarts.init(
-    document.getElementById('b7106ea5cadf467d98ae8e617d6e20e9'), 'white', {renderer: 'canvas'});
-var option_b7106ea5cadf467d98ae8e617d6e20e9 = {
+var chart_c4e9a4fdbea94cf6aa3cf13abb4fc989 = echarts.init(
+    document.getElementById('c4e9a4fdbea94cf6aa3cf13abb4fc989'), 'white', {renderer: 'canvas'});
+var option_c4e9a4fdbea94cf6aa3cf13abb4fc989 = {
 "animation": true,
 "animationThreshold": 2000,
 "animationDuration": 1000,
@@ -12,7 +12,7 @@ var option_b7106ea5cadf467d98ae8e617d6e20e9 = {
 "color": [
 "maroon",
 "firebrick",
-"red"
+"orangered"
 ],
 "series": [
 {
@@ -21,11 +21,11 @@ var option_b7106ea5cadf467d98ae8e617d6e20e9 = {
     "data": [
         {
             "name": "1\ucc28",
-            "value": 13
+            "value": 15
         },
         {
             "name": "2\ucc28",
-            "value": 7
+            "value": 8
         },
         {
             "name": "3\ucc28",
@@ -66,9 +66,6 @@ var option_b7106ea5cadf467d98ae8e617d6e20e9 = {
     ],
     "selected": {},
     "show": true,
-    "left": "75%",
-    "top": "70%",
-    "orient": "vertical",
     "padding": 5,
     "itemGap": 10,
     "itemWidth": 25,
@@ -95,4 +92,4 @@ var option_b7106ea5cadf467d98ae8e617d6e20e9 = {
 }
 ]
 };
-chart_b7106ea5cadf467d98ae8e617d6e20e9.setOption(option_b7106ea5cadf467d98ae8e617d6e20e9);
+chart_c4e9a4fdbea94cf6aa3cf13abb4fc989.setOption(option_c4e9a4fdbea94cf6aa3cf13abb4fc989);

@@ -1,6 +1,6 @@
-var chart_02f33039b49d43f08862d4128a38cd9c = echarts.init(
-    document.getElementById('02f33039b49d43f08862d4128a38cd9c'), 'white', {renderer: 'canvas'});
-var option_02f33039b49d43f08862d4128a38cd9c = {
+var chart_7259ecd200114768900e829e4bdd42bc = echarts.init(
+    document.getElementById('7259ecd200114768900e829e4bdd42bc'), 'white', {renderer: 'canvas'});
+var option_7259ecd200114768900e829e4bdd42bc = {
 "animation": true,
 "animationThreshold": 2000,
 "animationDuration": 1000,
@@ -28,11 +28,15 @@ var option_02f33039b49d43f08862d4128a38cd9c = {
         },
         {
             "name": "\uc6b0\ud55c \uad50\ubbfc",
-            "value": 2
+            "value": 3
         },
         {
             "name": "\uc6b0\ud55c \ubc29\ubb38\uc790",
-            "value": 7
+            "value": 6
+        },
+        {
+            "name": "\uc911\uad6d \ubc29\ubb38\uc790",
+            "value": 2
         },
         {
             "name": "\uc911\uad6d\uc778 \uad00\uad11\uac1d",
@@ -40,7 +44,7 @@ var option_02f33039b49d43f08862d4128a38cd9c = {
         },
         {
             "name": "\ud655\uc9c4\uc790 \uac00\uc871",
-            "value": 7
+            "value": 8
         },
         {
             "name": "\ud655\uc9c4\uc790 \uc9c0\uc778",
@@ -78,15 +82,13 @@ var option_02f33039b49d43f08862d4128a38cd9c = {
         "\uae30\ud0c0 \ud574\uc678 \ubc29\ubb38\uc790",
         "\uc6b0\ud55c \uad50\ubbfc",
         "\uc6b0\ud55c \ubc29\ubb38\uc790",
+        "\uc911\uad6d \ubc29\ubb38\uc790",
         "\uc911\uad6d\uc778 \uad00\uad11\uac1d",
         "\ud655\uc9c4\uc790 \uac00\uc871",
         "\ud655\uc9c4\uc790 \uc9c0\uc778"
     ],
     "selected": {},
     "show": true,
-    "left": "75%",
-    "top": "37%",
-    "orient": "vertical",
     "padding": 5,
     "itemGap": 10,
     "itemWidth": 25,
@@ -112,4 +114,4 @@ var option_02f33039b49d43f08862d4128a38cd9c = {
 }
 ]
 };
-chart_02f33039b49d43f08862d4128a38cd9c.setOption(option_02f33039b49d43f08862d4128a38cd9c);
+chart_7259ecd200114768900e829e4bdd42bc.setOption(option_7259ecd200114768900e829e4bdd42bc);
